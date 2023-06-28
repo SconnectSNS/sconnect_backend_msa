@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sns_db
+    username: root
+    password: urnotyelping00
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  servlet:
+    multipart:
+      max-file-size: 15MB
+      max-request-size: 15MB
+#aws s3 ?? ?? ??
