@@ -1,14 +1,8 @@
-app:
-  jwt:
-    accessTokenValidMS: 3600000
-    refreshTokenValidMS: 604800000
-    secret: ${APP_JWT_SECRET}
-
 spring:
   application:
     name: auth
   datasource:
-    url: jdbc:mysql://localhost:3306/user_db
+    url: jdbc:mysql://localhost:3306/payment_db
     username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
@@ -21,5 +15,4 @@ spring:
     host: ${SCONNECT_REDIS_HOST}   # Redis host
     port: ${SCONNECT_REDIS_PORT}   # Redis port
 server:
-    port: 8081
-
+  port: 8082
