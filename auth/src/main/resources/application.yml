@@ -18,4 +18,6 @@ spring:
   redis:
     host: ${SCONNECT_REDIS_HOST}   # Redis host
     port: ${SCONNECT_REDIS_PORT}   # Redis port
+server:
+    port: 8081
 

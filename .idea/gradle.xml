@@ -4,38 +4,42 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/auth/auth" />
-        <option name="gradleJvm" value="20" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/api-gateway" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/auth/auth" />
+            <option value="$PROJECT_DIR$/api-gateway" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/payment/payment" />
-        <option name="gradleJvm" value="20" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/auth" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/payment/payment" />
+            <option value="$PROJECT_DIR$/auth" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/review/review" />
-        <option name="gradleJvm" value="20" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/payment" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/review/review" />
+            <option value="$PROJECT_DIR$/payment" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/sns/sns" />
-        <option name="gradleJvm" value="20" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/review" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/sns/sns" />
+            <option value="$PROJECT_DIR$/review" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sns" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sns" />
           </set>
         </option>
       </GradleProjectSettings>
