@@ -43,7 +43,13 @@ dependencies {
 	implementation("io.jsonwebtoken:jjwt-api:0.10.5")
 	runtimeOnly("io.jsonwebtoken:jjwt-impl:0.10.5")
 	runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.10.5")
+	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 
+}
+dependencyManagement {
+	imports {
+		mavenBom("org.springframework.cloud:spring-cloud-dependencies:2021.0.4")
+	}
 }
 
 tasks.withType<KotlinCompile> {
