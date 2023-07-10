@@ -1,23 +1,8 @@
-spring:
-  application:
-    name: api-gateway
-  main:
-    web-application-type: reactive
-  cloud:
-    gateway:
-      ## AUTH 서버 라우팅
-      routes[0]:
-        id: auth
-        uri: lb://auth
-        predicates[0]: Path=/api/users
-        filters[0]: StripPrefix=1
-      ## SNS 서버 라우팅
-      routes[1]:
-        id: sns
-        uri: lb://sns
-        predicates[0]: Path=/api/sns/**
-        filters[0]: StripPrefix=1
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # expose all endpoints
 eureka:
   client:
     service-url:
@@ -26,10 +11,24 @@ eureka:
       register-with-eureka: true
 
 server:
-  port: 8080
+  port: 9191
 
-management:
-    endpoints:
-      web:
-        exposure:
-          include: "*" # expose all endpoints
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      ## AUTH 서버 라우팅
+      routes[0]:
+        id: auth
+        uri: lb://auth
+        predicates[0]: Path=/api/users/**
+      ## SNS 서버 라우팅
+      routes[1]:
+        id: sns
+        uri: lb://sns
+        predicates[0]: Path=/api/sns/**
+
+
+
+
