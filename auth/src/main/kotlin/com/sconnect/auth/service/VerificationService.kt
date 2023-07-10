@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service
 class VerificationService(
     private val verificationRepository: VerificationRepository
 ) {
+    /*
     fun setVerificationCode(email: String, verificationCode: String) {
 
     }
@@ -30,5 +31,5 @@ class VerificationService(
     fun verifyPassword(userId: String, password:String){
 
     }
-
+    */
 }

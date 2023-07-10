@@ -3,13 +3,33 @@ spring:
     name: api-gateway
   main:
     web-application-type: reactive
+  cloud:
+    gateway:
+      ## AUTH 서버 라우팅
+      routes[0]:
+        id: auth
+        uri: lb://auth
+        predicates[0]: Path=/api/users
+        filters[0]: StripPrefix=1
+      ## SNS 서버 라우팅
+      routes[1]:
+        id: sns
+        uri: lb://sns
+        predicates[0]: Path=/api/sns/**
+        filters[0]: StripPrefix=1
 
 eureka:
-  instance:
-    hostname: localhost
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      fetch-registry: true
+      register-with-eureka: true
 
 server:
   port: 8080
+
+management:
+    endpoints:
+      web:
+        exposure:
+          include: "*" # expose all endpoints

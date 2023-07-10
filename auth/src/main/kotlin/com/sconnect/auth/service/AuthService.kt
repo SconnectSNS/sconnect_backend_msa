@@ -40,6 +40,7 @@ class AuthService(
 
 
         redisTemplate.opsForValue().set(account.email, refreshToken.token, refreshToken.expiredIn , TimeUnit.MILLISECONDS)
+
         return AuthTokenDto(jwtTokenProvider.generateAccessToken(account.email), refreshToken)
     }
 }

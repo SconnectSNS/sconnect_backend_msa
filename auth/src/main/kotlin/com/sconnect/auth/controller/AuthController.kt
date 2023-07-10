@@ -20,7 +20,7 @@ class AuthController(
     private val authService: AuthService
 ) {
     // 회원가입
-    @PostMapping
+    @PostMapping("signup")
     @ResponseStatus(HttpStatus.OK)
     fun signUp(
         @RequestBody @Valid

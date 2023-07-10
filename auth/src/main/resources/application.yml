@@ -20,6 +20,17 @@ spring:
   redis:
     host: ${SCONNECT_REDIS_HOST}   # Redis host
     port: ${SCONNECT_REDIS_PORT}   # Redis port
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: auth
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
 server:
     port: 8081
 
@@ -29,4 +40,5 @@ eureka:
         defaultZone: http://localhost:8761/eureka/
         fetch-registry: true
         register-with-eureka: true
+
 
