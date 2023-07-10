@@ -5,7 +5,7 @@ spring:
     password: urnotyelping00
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: create
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
@@ -13,4 +13,3 @@ spring:
     multipart:
       max-file-size: 15MB
       max-request-size: 15MB
-#aws s3 ?? ?? ??

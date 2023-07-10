@@ -6,6 +6,7 @@ import com.sconnect.auth.model.dto.SignInDto
 import com.sconnect.auth.model.dto.SignUpDto
 import com.sconnect.auth.model.entity.Account
 import com.sconnect.auth.repository.AccountRepository
+import com.sconnect.auth.repository.RedisRepository
 import com.sconnect.auth.security.JwtTokenProvider
 import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.security.crypto.password.PasswordEncoder
@@ -18,7 +19,7 @@ class AuthService(
     private val passwordEncoder: PasswordEncoder,
     private val accountRepository: AccountRepository,
     private val jwtTokenProvider: JwtTokenProvider,
-    private val redisTemplate: RedisTemplate<String, String>
+    private val redisRepository: RedisRepository
 ) {
     @Transactional(rollbackFor = [Exception::class])
     fun signUp(dto:SignUpDto) {
@@ -38,8 +39,7 @@ class AuthService(
 
         val refreshToken = jwtTokenProvider.generateRefreshToken(account.email)
 
-
-        redisTemplate.opsForValue().set(account.email, refreshToken.token, refreshToken.expiredIn , TimeUnit.MILLISECONDS)
+        redisRepository.saveRefreshToken(account.email, refreshToken.token)
 
         return AuthTokenDto(jwtTokenProvider.generateAccessToken(account.email), refreshToken)
     }

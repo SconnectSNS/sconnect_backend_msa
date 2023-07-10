@@ -13,4 +13,6 @@ class Post(
         val title: String = "",
         val content: String = "",
         //User 추가
+        // val user: User = User()
+        val imageUrl: String = ""
 )

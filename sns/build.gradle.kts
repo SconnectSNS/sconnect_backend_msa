@@ -23,6 +23,8 @@ configurations {
 
 repositories {
 	mavenCentral()
+	maven { url = uri("https://repo.spring.io/milestone") }
+	maven { url = uri("https://repo.spring.io/snapshot") }
 }
 
 dependencies {
@@ -35,6 +37,19 @@ dependencies {
 	runtimeOnly("com.mysql:mysql-connector-j")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("javax.validation:validation-api:2.0.1.Final")
+	implementation("org.hibernate.validator:hibernate-validator:6.0.21.Final")
+	implementation("io.jsonwebtoken:jjwt-api:0.10.5")
+	runtimeOnly("io.jsonwebtoken:jjwt-impl:0.10.5")
+	runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.10.5")
+
+	implementation("org.springframework.kafka:spring-kafka")
+	implementation("org.apache.kafka:kafka-clients")
+}
+dependencyManagement {
+	imports {
+		mavenBom("org.springframework.cloud:spring-cloud-dependencies:2021.0.4")
+	}
 }
 
 tasks.withType<KotlinCompile> {
