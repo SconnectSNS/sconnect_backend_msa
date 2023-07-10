@@ -1,6 +1,5 @@
 package com.sconnect.sns.service
 
-import com.sconnect.sns.model.entity.Post
 import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.stereotype.Service
 
@@ -10,7 +9,8 @@ class TokenValidationResultListener(
 ) {
 
     @KafkaListener(topics = ["token-responses"], groupId = "group_id")
-    fun handleValidationResult(payload: Map<String, Any>) {
+    fun handleValidationResult(payload: String) {
+        /*
         val postId = payload["postId"] as Long
         val isValid = payload["isValid"] as Boolean
 
@@ -19,6 +19,8 @@ class TokenValidationResultListener(
             // 검증 실패, 게시물 롤백
             postService.rollbackPost(postId)
         }
+
+         */
     }
 }
 

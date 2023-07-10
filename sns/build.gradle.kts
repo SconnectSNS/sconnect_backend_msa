@@ -42,7 +42,7 @@ dependencies {
 	implementation("io.jsonwebtoken:jjwt-api:0.10.5")
 	runtimeOnly("io.jsonwebtoken:jjwt-impl:0.10.5")
 	runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.10.5")
-
+	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 	implementation("org.springframework.kafka:spring-kafka")
 	implementation("org.apache.kafka:kafka-clients")
 }

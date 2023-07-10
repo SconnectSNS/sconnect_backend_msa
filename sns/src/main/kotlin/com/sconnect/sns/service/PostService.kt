@@ -1,5 +1,6 @@
 package com.sconnect.sns.service
 
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.sconnect.sns.model.entity.Post
 import com.sconnect.sns.repository.PostRepository
 import com.sconnect.sns.request.CreatePostRequest
@@ -8,9 +9,13 @@ import org.springframework.stereotype.Service
 
 @Service
 class PostService(
-    private val kafkaTemplate: KafkaTemplate<String, Map<String, Any>>,
+    private val kafkaTemplate: KafkaTemplate<String, String>,
     private val postRepository: PostRepository
 ) {
+    inner class RequestToken(
+        val token: String,
+        val postId: Long
+    )
     fun createPost(authorization: String, createPostRequest: CreatePostRequest): Post {
         // "Authorization" 헤더에서 "Bearer"를 제거하고 토큰만 추출
         val token = authorization.removePrefix("Bearer ").trim()
@@ -25,7 +30,11 @@ class PostService(
         val savedPost = postRepository.save(post) // 먼저 게시글을 저장하고, 게시물 ID를 가져옵니다.
 
         // 토큰 검증 요청을 Kafka로 전송 (비동기)
-        kafkaTemplate.send("token-requests", mapOf("token" to token, "postId" to savedPost.id))
+        val mapper = jacksonObjectMapper()
+
+        val jsonString = mapper.writeValueAsString(RequestToken(token, savedPost.id))
+
+        kafkaTemplate.send("token-requests", jsonString)
 
         return savedPost
     }
