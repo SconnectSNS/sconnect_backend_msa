@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RestController
 import javax.validation.Valid
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/users")
 class AuthController(
     private val authService: AuthService
 ) {
     // 회원가입
-    @PostMapping("/sign-up")
+    @PostMapping
     @ResponseStatus(HttpStatus.OK)
     fun signUp(
         @RequestBody @Valid
@@ -32,7 +32,7 @@ class AuthController(
     }
 
     //로그인
-    @PostMapping("/sign-in")
+    @PostMapping("/login")
     @ResponseStatus(HttpStatus.OK)
     fun signIn(
         @RequestBody @Valid
