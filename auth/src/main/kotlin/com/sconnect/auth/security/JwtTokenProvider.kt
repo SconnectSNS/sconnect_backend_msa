@@ -61,7 +61,7 @@ open class JwtTokenProvider(
         return getClaimsFromToken(token)
     }
 
-    private fun getClaimsFromToken(token: String): Claims? {
+    fun getClaimsFromToken(token: String): Claims? {
         return Jwts.parser()
             .setSigningKey(secretKey)
             .parseClaimsJws(token)

@@ -8,20 +8,33 @@ import org.springframework.stereotype.Service
 
 @Service
 class PostService(
-    private val kafkaTemplate: KafkaTemplate<String, String>,
+    private val kafkaTemplate: KafkaTemplate<String, Map<String, Any>>,
     private val postRepository: PostRepository
 ) {
     fun createPost(authorization: String, createPostRequest: CreatePostRequest): Post {
         // "Authorization" 헤더에서 "Bearer"를 제거하고 토큰만 추출
         val token = authorization.removePrefix("Bearer ").trim()
 
-        // 토큰 검증 요청을 Kafka로 전송
-        kafkaTemplate.send("token-requests", token)
+        // 게시글 생성
         val post = Post(
             title = createPostRequest.title,
             content = createPostRequest.content,
             imageUrl = createPostRequest.imageUrl
         )
-        return postRepository.save(post)
+
+        val savedPost = postRepository.save(post) // 먼저 게시글을 저장하고, 게시물 ID를 가져옵니다.
+
+        // 토큰 검증 요청을 Kafka로 전송 (비동기)
+        kafkaTemplate.send("token-requests", mapOf("token" to token, "postId" to savedPost.id))
+
+        return savedPost
+    }
+
+    // 토큰 유효성 검증에 실패하면 호출되는 메소드
+    fun rollbackPost(postId: Long) {
+        val post = postRepository.findById(postId)
+            .orElseThrow { throw IllegalArgumentException("Invalid post ID") }
+        postRepository.delete(post)
     }
 }
+
