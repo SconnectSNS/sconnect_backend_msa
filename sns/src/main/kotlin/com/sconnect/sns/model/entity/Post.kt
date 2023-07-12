@@ -9,10 +9,11 @@ import javax.persistence.Id
 class Post(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        val id: Long = 0,
-        val title: String = "",
-        val content: String = "",
+        var id: Long = 0,
+        var title: String = "",
+        var content: String = "",
         //User 추가
         // val user: User = User()
-        val imageUrl: String = ""
+        var imageUrl: String = "",
+        var userId: Long? = 0
 )

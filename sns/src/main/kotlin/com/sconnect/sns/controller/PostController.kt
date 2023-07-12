@@ -3,7 +3,6 @@ package com.sconnect.sns.controller
 import com.sconnect.sns.request.CreatePostRequest
 import com.sconnect.sns.service.PostService
 import org.springframework.http.ResponseEntity
-import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.web.bind.annotation.*
 
 @RestController

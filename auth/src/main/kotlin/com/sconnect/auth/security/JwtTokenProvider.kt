@@ -82,7 +82,7 @@ open class JwtTokenProvider(
             .collect(Collectors.toList())
     }
 
-    fun getUserIdFromToken(token: String): String {
-        return getClaimsFromToken(token)!!["id"] as String
+    fun getUserEmailFromToken(token: String): String {
+        return getClaimsFromToken(token)!!["email"] as String
     }
 }
