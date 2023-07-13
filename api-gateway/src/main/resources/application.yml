@@ -18,6 +18,8 @@ spring:
     name: api-gateway
   cloud:
     gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
       ## AUTH 서버 라우팅
       routes[0]:
         id: auth
@@ -28,6 +30,20 @@ spring:
         id: sns
         uri: lb://sns
         predicates[0]: Path=/api/sns/**
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: 'http://localhost:3090'
+            allow-credentials: true
+            allowedHeaders: '*'
+            allowedMethods:
+              - PUT
+              - GET
+              - POST
+              - DELETE
+              - OPTIONS
+
+
 
 
 

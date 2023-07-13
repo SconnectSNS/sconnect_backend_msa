@@ -19,7 +19,7 @@ class CustomerSecurityConfig {
     @Bean
     fun webSecurityCustomizer(): WebSecurityCustomizer{
         return WebSecurityCustomizer {
-            it.ignoring().antMatchers("/api/auth/**")
+            it.ignoring().antMatchers("/api/users/**")
         }
     }
 }

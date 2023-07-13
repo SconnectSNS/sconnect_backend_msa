@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b2f727f-cc9e-45bf-bd0e-baaed3309eec" name="Changes" comment="commit" />
+    <list default="true" id="7b2f727f-cc9e-45bf-bd0e-baaed3309eec" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/service-registry/src/main/kotlin/com/sconnect/serviceregistry/config/WebConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce13db3f-3cba-4c38-8508-165006e5a451.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ce13db3f-3cba-4c38-8508-165006e5a451.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/kotlin/com/sconnect/apigateway/config/WebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/com/sconnect/apigateway/config/WebConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/CustomerSecurityConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/CustomerSecurityConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/SecurityConfig.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/WebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/WebConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/resources/application.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +84,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "4f0b503b0b2c1074577a593cf43ea4df",
+    "spring.configuration.checksum": "3a1b7a49b477e983b2eb3cadec6c868d",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -92,7 +103,29 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AuthApplication">
+  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
+    <configuration name="Tests in 'api-gateway'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/api-gateway" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
     <configuration name="Tests in 'auth'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -156,6 +189,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Gradle.Tests in 'api-gateway'" />
       <item itemvalue="Gradle.Tests in 'auth'" />
       <item itemvalue="Spring Boot.SnsApplication" />
       <item itemvalue="Spring Boot.AuthApplication" />
@@ -164,9 +198,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Tests in 'auth'" />
-        <item itemvalue="Spring Boot.ApiGatewayApplication" />
         <item itemvalue="Spring Boot.ServiceRegistryApplication" />
+        <item itemvalue="Spring Boot.ApiGatewayApplication" />
+        <item itemvalue="Gradle.Tests in 'api-gateway'" />
+        <item itemvalue="Gradle.Tests in 'auth'" />
       </list>
     </recent_temporary>
   </component>
@@ -187,7 +222,8 @@
       <workItem from="1688968111990" duration="1746000" />
       <workItem from="1688972894702" duration="236000" />
       <workItem from="1688997900186" duration="547000" />
-      <workItem from="1689142669309" duration="6377000" />
+      <workItem from="1689142669309" duration="6557000" />
+      <workItem from="1689209553341" duration="2390000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -287,6 +323,11 @@
           <url>file://$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/service/TokenVerificationListener.kt</url>
           <line>24</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/security/UserAccessDeniedHandler.kt</url>
+          <line>9</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
