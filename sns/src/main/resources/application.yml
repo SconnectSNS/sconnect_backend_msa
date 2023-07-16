@@ -36,3 +36,11 @@ eureka:
 
 server:
   port: 8082
+
+cloud:
+  aws:
+    region:
+      static: us-east-1 #TODO: aws s3에 맞게 변경
+    credentials:
+      access-key: ${AWS_ACCESS_KEY}
+      secret-key: ${AWS_SECRET_KEY}

@@ -45,6 +45,11 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 	implementation("org.springframework.kafka:spring-kafka")
 	implementation("org.apache.kafka:kafka-clients")
+
+	//aws
+	implementation("org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE")
+	implementation("com.amazonaws:aws-java-sdk-core:1.12.385")
+	implementation("com.amazonaws:aws-java-sdk-s3:1.12.385")
 }
 dependencyManagement {
 	imports {

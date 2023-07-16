@@ -23,4 +23,11 @@ class PostController(
 
         return ResponseEntity.ok().body("Post creation in process.")
     }
+
+    @GetMapping
+    fun getPosts(): ResponseEntity<Any> {
+        val posts = postService.getPosts()
+
+        return ResponseEntity.ok().body(posts)
+    }
 }

@@ -1,5 +1,6 @@
 package com.sconnect.sns.model.entity
 
+import java.time.LocalDateTime
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
@@ -15,5 +16,10 @@ class Post(
         //User 추가
         // val user: User = User()
         var imageUrl: String = "",
-        var userId: Long? = 0
+        var userId: Long? = 0,
+        var imageData:String,
+
+        //Created At, Updated At 추가
+        var createdAt: LocalDateTime = LocalDateTime.now(),
+        var updatedAt: LocalDateTime = LocalDateTime.now()
 )

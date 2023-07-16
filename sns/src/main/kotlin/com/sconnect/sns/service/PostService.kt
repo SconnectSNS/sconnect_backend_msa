@@ -22,7 +22,8 @@ class PostService(
             title = createPostRequest.title,
             content = createPostRequest.content,
             imageUrl = createPostRequest.imageUrl,
-            userId = null
+            userId = null,
+            imageData = ""
         )
 
         val savedPost = postRepository.save(post) // 먼저 게시글을 저장하고, 게시물 ID를 가져옵니다.
@@ -36,6 +37,13 @@ class PostService(
 
         return savedPost
     }
+
+    fun getPosts(): List<Post>{
+        //DB에 저장된 Post 데이터를 최신순으로 가져옴.
+        //사용자 인증이 필요없음. 진짜로 최신순 게시글을 불러오는 것이므로
+        return postRepository.findAll().sortedByDescending { it.createdAt }
+    }
+
 
     // 토큰 유효성 검증에 실패하면 호출되는 메소드
     fun rollbackPost(postId: Long) {
