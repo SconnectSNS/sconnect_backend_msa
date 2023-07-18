@@ -54,6 +54,7 @@ dependencies {
 dependencyManagement {
 	imports {
 		mavenBom("org.springframework.cloud:spring-cloud-dependencies:2021.0.4")
+		mavenBom("com.amazonaws:aws-java-sdk-bom:1.11.228")
 	}
 }
 
