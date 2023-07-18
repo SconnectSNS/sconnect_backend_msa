@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.*
 @RequestMapping("/api/sns")
 class PostController(
 
-    private val postService: PostService
+        private val postService: PostService
 ) {
 
     @PostMapping
     fun createPost(
-        @RequestHeader("Authorization") authorization: String,
-        @RequestBody createPostRequest: CreatePostRequest
+            @RequestHeader("Authorization") authorization: String,
+            @RequestBody createPostRequest: CreatePostRequest
     ): ResponseEntity<Any> {
 
 
@@ -32,7 +32,7 @@ class PostController(
             @RequestParam(required = false) search: String?,
             @RequestParam(required = false, defaultValue = "createdAt") sort: String?,
     ): ResponseEntity<Any> {
-        val posts = postService.getPosts(page, size, sort, search)
+        val posts = postService.getPosts(page, size, search, sort)
 
         return ResponseEntity.ok().body(posts)
     }
