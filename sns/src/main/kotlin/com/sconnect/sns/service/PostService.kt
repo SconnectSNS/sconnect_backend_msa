@@ -5,6 +5,11 @@ import com.sconnect.sns.model.dto.RequestTokenDto
 import com.sconnect.sns.model.entity.Post
 import com.sconnect.sns.repository.PostRepository
 import com.sconnect.sns.request.CreatePostRequest
+import com.sconnect.sns.response.PostResponse
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.PageRequest
+import org.springframework.data.domain.Pageable
+import org.springframework.data.domain.Sort
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.stereotype.Service
 
@@ -23,7 +28,8 @@ class PostService(
             content = createPostRequest.content,
             imageUrl = createPostRequest.imageUrl,
             userId = null,
-            imageData = ""
+            imageData = "",
+            userName = ""
         )
 
         val savedPost = postRepository.save(post) // 먼저 게시글을 저장하고, 게시물 ID를 가져옵니다.
@@ -38,11 +44,33 @@ class PostService(
         return savedPost
     }
 
-    fun getPosts(): List<Post>{
+    fun getPosts(page:Int, size:Int, sort:String?): List<PostResponse>{
         //DB에 저장된 Post 데이터를 최신순으로 가져옴.
         //사용자 인증이 필요없음. 진짜로 최신순 게시글을 불러오는 것이므로
-        return postRepository.findAll().sortedByDescending { it.createdAt }
+        //TODO: 검색 글을 가져오는 방식
+        val pageRequest: Pageable = PageRequest.of(page-1, size, Sort.Direction.DESC, sort)
+        val posts: Page<Post> = postRepository.findAll(pageRequest)
+        val postResponses= mutableListOf<PostResponse>()
+        posts.forEach { postResponses.add(PostResponse(it)) }
+        return postResponses
     }
+
+    fun getPost(postId: Long): PostResponse {
+        return PostResponse(postRepository.findById(postId)
+            .orElseThrow { throw IllegalArgumentException("Invalid post ID") })
+    }
+
+    /*
+    // TODO: 추천 게시글 저장된거 가져오기
+    fun getSuggestedPostsOfPost(postId: Long): List<PostResponse> {
+        val post = postRepository.findById(postId)
+            .orElseThrow { throw IllegalArgumentException("Invalid post ID") }
+        val posts = postRepository.findAllByUserId(post.userId)
+        val postResponses = mutableListOf<PostResponse>()
+        posts.forEach { postResponses.add(PostResponse(it)) }
+        return postResponses
+    }
+     */
 
 
     // 토큰 유효성 검증에 실패하면 호출되는 메소드
@@ -52,10 +80,11 @@ class PostService(
         postRepository.delete(post)
     }
 
-    fun completePost(postId: Long, userId: String) {
+    fun completePost(postId: Long, userId: String, nickname: String) {
         val post = postRepository.findById(postId)
             .orElseThrow { throw IllegalArgumentException("Invalid post ID") }
         post.userId = userId.toLong()
+        post.userName = nickname
         postRepository.save(post)
     }
 }

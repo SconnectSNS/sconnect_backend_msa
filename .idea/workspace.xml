@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b2f727f-cc9e-45bf-bd0e-baaed3309eec" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/service-registry/src/main/kotlin/com/sconnect/serviceregistry/config/WebConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce13db3f-3cba-4c38-8508-165006e5a451.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ce13db3f-3cba-4c38-8508-165006e5a451.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/kotlin/com/sconnect/apigateway/config/WebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/com/sconnect/apigateway/config/WebConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/CustomerSecurityConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/CustomerSecurityConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/SecurityConfig.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/WebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/WebConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/model/dto/ResponseTokenDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/model/dto/ResponseTokenDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/service/TokenVerificationListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/service/TokenVerificationListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/PostController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/PostController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/dto/ResponseTokenDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/dto/ResponseTokenDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Post.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Post.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/response/PostResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/response/PostResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/PostService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/PostService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/TokenValidationResultListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/TokenValidationResultListener.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +43,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/api-gateway">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -69,30 +71,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Administrator/IdeaProjects/sconnect_backend_msa/auth/settings.gradle.kts",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "3a1b7a49b477e983b2eb3cadec6c868d",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/IdeaProjects/sconnect_backend_msa/auth/settings.gradle.kts&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;3a1b7a49b477e983b2eb3cadec6c868d&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -198,8 +200,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ServiceRegistryApplication" />
         <item itemvalue="Spring Boot.ApiGatewayApplication" />
+        <item itemvalue="Spring Boot.ServiceRegistryApplication" />
         <item itemvalue="Gradle.Tests in 'api-gateway'" />
         <item itemvalue="Gradle.Tests in 'auth'" />
       </list>
@@ -224,6 +226,9 @@
       <workItem from="1688997900186" duration="547000" />
       <workItem from="1689142669309" duration="6557000" />
       <workItem from="1689209553341" duration="2390000" />
+      <workItem from="1689474696756" duration="54000" />
+      <workItem from="1689554981385" duration="2805000" />
+      <workItem from="1689641624999" duration="3622000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -241,11 +246,30 @@
       <option name="project" value="LOCAL" />
       <updated>1688998436518</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit">
+      <option name="closed" value="true" />
+      <created>1689474743244</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689474743244</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
@@ -276,17 +300,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/service/TokenVerificationListener.kt</url>
-          <line>34</line>
+          <line>35</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/service/TokenVerificationListener.kt</url>
-          <line>36</line>
+          <line>37</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/service/TokenVerificationListener.kt</url>
-          <line>35</line>
+          <line>36</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">

@@ -16,7 +16,7 @@ class TokenValidationResultListener(
         val responseToken: ResponseTokenDto = mapper.readValue(payload, ResponseTokenDto::class.java)
         if(responseToken.valid) {
             //검증 성공
-            postService.completePost(responseToken.postId, responseToken.userId)
+            postService.completePost(responseToken.postId, responseToken.userId, responseToken.nickname)
         } else {
             //검증 실패
             postService.rollbackPost(responseToken.postId)

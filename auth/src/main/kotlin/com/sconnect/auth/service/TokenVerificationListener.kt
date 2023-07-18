@@ -31,13 +31,14 @@ class TokenValidationListener(
             //jwt에서는 email이 들어있음
             val email = jwtTokenProvider.getUserEmailFromToken(token)
             val userId = accountRepository.findByEmail(email)?.id.toString()
+            val nickname = accountRepository.findByEmail(email)?.nickname.toString()
             // 결과를 Kafka로 전송
-            val responseToken = ResponseTokenDto(token, postId, true, userId)
+            val responseToken = ResponseTokenDto(token, postId, true, userId, nickname)
             val jsonString = mapper.writeValueAsString(responseToken)
             kafkaTemplate.send("token-response", jsonString)
         } catch (e: Exception) {
             // 검증 실패, 결과를 Kafka로 전송
-            val responseToken = ResponseTokenDto(token, postId, false, "")
+            val responseToken = ResponseTokenDto(token, postId, false, "", "null")
             val jsonString = mapper.writeValueAsString(responseToken)
             kafkaTemplate.send("token-response", jsonString)
         }

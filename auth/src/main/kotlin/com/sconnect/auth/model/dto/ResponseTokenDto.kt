@@ -4,5 +4,6 @@ class ResponseTokenDto(
         val token: String,
         val postId: Long,
         val valid: Boolean,
-        val userId: String
+        val userId: String,
+        val nickname: String,
 )

@@ -17,7 +17,8 @@ class Post(
         // val user: User = User()
         var imageUrl: String = "",
         var userId: Long? = 0,
-        var imageData:String,
+        var imageData:String?="",
+        var userName:String="",
 
         //Created At, Updated At 추가
         var createdAt: LocalDateTime = LocalDateTime.now(),

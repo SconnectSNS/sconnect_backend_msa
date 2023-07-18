@@ -1,14 +1,15 @@
 package com.sconnect.sns.response
 
+import com.sconnect.sns.model.entity.Post
 import java.time.LocalDateTime
 
-clss PostResponse(
+class PostResponse(
     val id: Long,
     val title: String,
     val content: String,
     val imageUrl: String,
     val userId: Long?,
-    val imageData: String,
+    val imageData: String?,
     val createdAt: LocalDateTime,
     val updatedAt: LocalDateTime
 ) {

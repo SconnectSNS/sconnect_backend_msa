@@ -24,10 +24,24 @@ class PostController(
         return ResponseEntity.ok().body("Post creation in process.")
     }
 
-    @GetMapping
-    fun getPosts(): ResponseEntity<Any> {
-        val posts = postService.getPosts()
+    // 게시글 목록 최신순 조회
+    @GetMapping("posts")
+    fun getPosts(
+            @RequestParam("page") page: Int,
+            @RequestParam("size") size: Int,
+            @RequestParam(required = false) search: String?,
+            @RequestParam(required = false, defaultValue = "createdAt") sort: String?,
+    ): ResponseEntity<Any> {
+        val posts = postService.getPosts(page, size, sort, search)
 
         return ResponseEntity.ok().body(posts)
+    }
+
+    // 게시글 상세 조회
+    @GetMapping("posts/{postId}")
+    fun getPost(@PathVariable postId: Long): ResponseEntity<Any> {
+        val post = postService.getPost(postId)
+
+        return ResponseEntity.ok().body(post)
     }
 }
