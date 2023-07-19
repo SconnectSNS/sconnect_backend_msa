@@ -17,7 +17,7 @@ class LikeController(
     fun createLike(
             @RequestParam("postId") postId: Long,
             @RequestHeader("Authorization") authorization: String
-    ){
+    ): ResponseEntity<Any> {
         val likeResponse = likeService.createLike(postId, authorization)
         return ResponseEntity.ok().body(likeResponse)
     }

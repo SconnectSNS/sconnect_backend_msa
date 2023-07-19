@@ -1,7 +1,9 @@
 package com.sconnect.sns.service
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import com.sconnect.sns.client.AuthServiceClient
 import com.sconnect.sns.model.dto.RequestTokenDto
+import com.sconnect.sns.model.dto.ResponseTokenDto
 import com.sconnect.sns.model.entity.Post
 import com.sconnect.sns.repository.PostRepository
 import com.sconnect.sns.request.CreatePostRequest
@@ -16,7 +18,8 @@ import org.springframework.stereotype.Service
 @Service
 class PostService(
         private val kafkaTemplate: KafkaTemplate<String, String>,
-        private val postRepository: PostRepository
+        private val postRepository: PostRepository,
+        private val authServiceClient: AuthServiceClient
 ) {
     fun createPost(authorization: String, createPostRequest: CreatePostRequest): Post {
         // "Authorization" 헤더에서 "Bearer"를 제거하고 토큰만 추출
@@ -63,7 +66,10 @@ class PostService(
         return PostResponse(postRepository.findById(postId)
                 .orElseThrow { throw IllegalArgumentException("Invalid post ID") })
     }
-
+    fun getValidatedPost(postId: Long): Post {
+        return postRepository.findById(postId)
+                .orElseThrow { throw IllegalArgumentException("Invalid post ID") }
+    }
     /*
     // TODO: 추천 게시글 저장된거 가져오기
     fun getSuggestedPostsOfPost(postId: Long): List<PostResponse> {
@@ -90,6 +96,16 @@ class PostService(
         post.userId = userId.toLong()
         post.userName = nickname
         postRepository.save(post)
+    }
+
+    fun savePost(post: Post): Post {
+        return postRepository.save(post)
+    }
+
+    fun getUserInfoFromToken(authorization: String): ResponseTokenDto {
+        //Feign을 이용해 auth서버에 요청
+        return authServiceClient.getAccountInfo(authorization)
+
     }
 }
 

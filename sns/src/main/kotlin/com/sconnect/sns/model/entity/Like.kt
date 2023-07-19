@@ -1,6 +1,7 @@
 package com.sconnect.sns.model.entity
 
 import com.fasterxml.jackson.annotation.JsonBackReference
+import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity
@@ -13,5 +14,8 @@ class Like(
         @JsonBackReference
         var post: Post,
 
-        var userId: Long = 0
+        var userId: Long = 0,
+
+        var createdAt: LocalDateTime = LocalDateTime.now(),
+        var updatedAt: LocalDateTime = LocalDateTime.now()
 )

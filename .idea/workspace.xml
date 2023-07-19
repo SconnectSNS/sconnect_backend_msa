@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b2f727f-cc9e-45bf-bd0e-baaed3309eec" name="Changes" comment="[BE FEAT] 검색 api 구현">
-      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/LikeController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/StorageController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/dto/StorageResponseDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/repository/LikeRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/LikeService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/StorageService.kt" afterDir="false" />
+    <list default="true" id="7b2f727f-cc9e-45bf-bd0e-baaed3309eec" name="Changes" comment="[BE FEAT] like 기능 구현">
+      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/client/AuthServiceClient.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/AuthApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/AuthApplication.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sns/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sns/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/SnsApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/SnsApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/LikeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/LikeController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Like.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Like.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Post.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Post.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/repository/LikeRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/repository/LikeRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/LikeService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/LikeService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/PostService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/PostService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +62,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
@@ -233,7 +237,7 @@
       <workItem from="1689209553341" duration="2390000" />
       <workItem from="1689474696756" duration="54000" />
       <workItem from="1689554981385" duration="2805000" />
-      <workItem from="1689641624999" duration="7828000" />
+      <workItem from="1689641624999" duration="12696000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -275,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689661743720</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="[BE FEAT] like 기능 구현">
+      <option name="closed" value="true" />
+      <created>1689688495793</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689688495793</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +308,8 @@
     <MESSAGE value="commit" />
     <MESSAGE value="[BE FEAT] 게시글 하나, 여러개 불러오는 api 작성" />
     <MESSAGE value="[BE FEAT] 검색 api 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="[BE FEAT] 검색 api 구현" />
+    <MESSAGE value="[BE FEAT] like 기능 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="[BE FEAT] like 기능 구현" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -19,7 +19,7 @@ class Post(
         var userId: Long? = 0,
         var imageData:String?="",
         var userName:String="",
-
+        var likeCount: Int = 0,
         //Created At, Updated At 추가
         var createdAt: LocalDateTime = LocalDateTime.now(),
         var updatedAt: LocalDateTime = LocalDateTime.now()
