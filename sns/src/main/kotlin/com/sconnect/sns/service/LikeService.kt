@@ -14,7 +14,7 @@ class LikeService(
 ) {
     fun createLike(postId: Long, jwt: String) {
         val userId = getUserInfoFromToken(jwt).userId
-        val like = likeRepository.findByPostIdAndUserId(postId, userId.toLong())
+        val like = likeRepository.findByPostPostIdAndUserId(postId, userId.toLong())
         val post = postService.getValidatedPost(postId)
         likeRepository.save(Like(post = post, userId = userId.toLong()))
         if (like == null) {

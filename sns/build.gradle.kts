@@ -52,11 +52,16 @@ dependencies {
 	implementation("com.amazonaws:aws-java-sdk-s3:1.12.385")
 
 	implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
+
+	// Google Cloud Vision
+	implementation("org.springframework.cloud:spring-cloud-gcp-starter-vision")
 }
+
 dependencyManagement {
 	imports {
 		mavenBom("org.springframework.cloud:spring-cloud-dependencies:2021.0.4")
 		mavenBom("com.amazonaws:aws-java-sdk-bom:1.11.228")
+		mavenBom("org.springframework.cloud:spring-cloud-gcp-dependencies:1.2.8.RELEASE")
 	}
 }
 

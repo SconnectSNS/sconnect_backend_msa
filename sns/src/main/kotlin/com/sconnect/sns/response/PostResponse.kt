@@ -4,7 +4,7 @@ import com.sconnect.sns.model.entity.Post
 import java.time.LocalDateTime
 
 class PostResponse(
-    val id: Long,
+    val postId: Long,
     val title: String,
     val content: String,
     val imageUrl: String,
@@ -14,7 +14,7 @@ class PostResponse(
     val updatedAt: LocalDateTime
 ) {
     constructor(post: Post) : this(
-        id = post.id,
+        postId = post.postId,
         title = post.title,
         content = post.content,
         imageUrl = post.imageUrl,

@@ -40,7 +40,7 @@ class PostService(
         // 토큰 검증 요청을 Kafka로 전송 (비동기)
         val mapper = jacksonObjectMapper()
 
-        val jsonString = mapper.writeValueAsString(RequestTokenDto(token, savedPost.id))
+        val jsonString = mapper.writeValueAsString(RequestTokenDto(token, savedPost.postId))
 
         kafkaTemplate.send("token-request", jsonString)
 

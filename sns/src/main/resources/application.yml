@@ -7,7 +7,7 @@ spring:
     password: urnotyelping00
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
@@ -40,7 +40,14 @@ server:
 cloud:
   aws:
     region:
-      static: us-east-1 #TODO: aws s3에 맞게 변경
+      static: ap-northeast-2 #TODO: aws s3에 맞게 변경
+      auto: false
     credentials:
       access-key: ${AWS_ACCESS_KEY}
       secret-key: ${AWS_SECRET_KEY}
+    stack:
+      auto: false
+
+application:
+  bucket:
+    name: marrassu

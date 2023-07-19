@@ -5,12 +5,13 @@ import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
+import javax.persistence.OneToMany
 
 @Entity
 class Post(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        var id: Long = 0,
+        var postId: Long = 0,
         var title: String = "",
         var content: String = "",
         //User 추가
@@ -20,6 +21,9 @@ class Post(
         var imageData:String?="",
         var userName:String="",
         var likeCount: Int = 0,
+        @OneToMany(mappedBy = "post")
+        var likes: MutableList<Like> = mutableListOf(),
+
         //Created At, Updated At 추가
         var createdAt: LocalDateTime = LocalDateTime.now(),
         var updatedAt: LocalDateTime = LocalDateTime.now()

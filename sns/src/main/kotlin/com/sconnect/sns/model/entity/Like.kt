@@ -8,11 +8,14 @@ import javax.persistence.*
 class Like(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        var id: Long = 0,
+        var likeId: Long = 0,
 
-        @ManyToOne(fetch= FetchType.LAZY)
+        @ManyToOne(fetch = FetchType.LAZY, optional = true)
+        @JoinColumn(name = "post_id")
         @JsonBackReference
-        var post: Post,
+        var post: Post? = null,
+
+
 
         var userId: Long = 0,
 

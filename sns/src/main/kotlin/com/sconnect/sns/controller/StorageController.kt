@@ -12,7 +12,9 @@ class StorageController(
         private val storageService: StorageService
 ) {
     @PostMapping("/upload")
-    fun uploadFile(@RequestParam("file") files: List<MultipartFile>): ResponseEntity<*> {
-        return ResponseEntity.ok(storageService.uploadFile(files))
+    fun uploadFile(
+            @RequestParam("file") file: MultipartFile
+    ): ResponseEntity<*> {
+        return ResponseEntity.ok(storageService.uploadFile(file))
     }
 }
