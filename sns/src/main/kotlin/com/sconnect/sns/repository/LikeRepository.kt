@@ -6,5 +6,4 @@ import org.springframework.data.jpa.repository.JpaRepository
 
 interface LikeRepository:JpaRepository<Like,Long> {
     fun findByPostIdAndUserId(postId: Long, userId: Long)
-    fun
 }
