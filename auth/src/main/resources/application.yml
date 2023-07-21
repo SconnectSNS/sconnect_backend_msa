@@ -41,4 +41,16 @@ eureka:
         fetch-registry: true
         register-with-eureka: true
 
+feign:
+  client:
+    config:
+      auth:
+        decode404: false
+        logger-level: full
+        connectTimeout: 5000
+        readTimeout: 5000
 
+external-api:
+  auth:
+    api-url: http://localhost:8082/
+    authorization: test #TODO:서버간 인증 키 설정

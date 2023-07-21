@@ -43,4 +43,9 @@ class AuthService(
 
         return AuthTokenDto(jwtTokenProvider.generateAccessToken(account.email), refreshToken)
     }
+
+    fun getAccountInfo(token: String): Account {
+        val email = jwtTokenProvider.getUserEmailFromToken(token)
+        return accountRepository.findByEmail(email)?: throw CantSignInException()
+    }
 }

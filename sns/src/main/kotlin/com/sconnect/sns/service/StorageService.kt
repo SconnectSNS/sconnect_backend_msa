@@ -42,10 +42,10 @@ class StorageService(
         fileObj.delete()
         val lableString:String = getGoogleApiResult(imageUrl)
         //save imageInfos to DB
-        imageRepository.save(com.sconnect.sns.model.entity.Image(imageUrl, lableString))
+        val savedImg = imageRepository.save(com.sconnect.sns.model.entity.Image(imageUrl, lableString))
 
         //TODO: response 바꾸기
-        return StorageResponse(imageUrl, lableString)
+        return StorageResponse(savedImg.imageId, imageUrl, lableString)
     }
 
     private fun convertMultiPartFileToFile(file: MultipartFile): File {

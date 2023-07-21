@@ -8,7 +8,7 @@ import javax.persistence.*
 class Account(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id:Long = 0,
+    val accountId:Long = 0,
     @Column(length = 64, unique = true)
     var email:String,
     val password:String,

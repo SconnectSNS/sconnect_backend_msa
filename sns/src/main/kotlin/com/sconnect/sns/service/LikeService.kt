@@ -4,6 +4,7 @@ import com.sconnect.sns.client.AuthServiceClient
 import com.sconnect.sns.model.dto.ResponseTokenDto
 import com.sconnect.sns.model.entity.Like
 import com.sconnect.sns.repository.LikeRepository
+import com.sconnect.sns.response.AccountResponse
 import org.springframework.stereotype.Service
 
 @Service
@@ -13,10 +14,10 @@ class LikeService(
         private val authServiceClient: AuthServiceClient
 ) {
     fun createLike(postId: Long, jwt: String) {
-        val userId = getUserInfoFromToken(jwt).userId
-        val like = likeRepository.findByPostPostIdAndUserId(postId, userId.toLong())
+        val userId = getUserInfoFromToken(jwt).accountId
+        val like = likeRepository.findByPostPostIdAndUserId(postId, userId)
         val post = postService.getValidatedPost(postId)
-        likeRepository.save(Like(post = post, userId = userId.toLong()))
+        likeRepository.save(Like(post = post, userId = userId))
         if (like == null) {
             // 좋아요를 누른 적이 없는 경우
             increaseLikeCount(postId)
@@ -41,7 +42,7 @@ class LikeService(
     }
 
 
-    fun getUserInfoFromToken(authorization: String): ResponseTokenDto {
+    fun getUserInfoFromToken(authorization: String): AccountResponse {
         //Feign을 이용해 auth서버에 요청
         return authServiceClient.getAccountInfo(authorization)
 

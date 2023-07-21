@@ -51,3 +51,11 @@ cloud:
 application:
   bucket:
     name: marrassu
+
+feign:
+  client:
+    config:
+      auth:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic

@@ -1,11 +1,7 @@
 package com.sconnect.sns.model.entity
 
 import java.time.LocalDateTime
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.OneToMany
+import javax.persistence.*
 
 @Entity
 class Post(
@@ -18,7 +14,8 @@ class Post(
         // val user: User = User()
         var imageUrl: String = "",
         var userId: Long? = 0,
-        var imageData:String?="",
+        @OneToOne(cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+        var image: Image,
         var userName:String="",
         var likeCount: Int = 0,
         @OneToMany(mappedBy = "post")

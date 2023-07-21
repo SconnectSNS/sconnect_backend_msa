@@ -30,7 +30,7 @@ class TokenValidationListener(
             // jwt에 해당하는 userId를 가져오기
             //jwt에서는 email이 들어있음
             val email = jwtTokenProvider.getUserEmailFromToken(token)
-            val userId = accountRepository.findByEmail(email)?.id.toString()
+            val userId = accountRepository.findByEmail(email)?.accountId.toString()
             val nickname = accountRepository.findByEmail(email)?.nickname.toString()
             // 결과를 Kafka로 전송
             val responseToken = ResponseTokenDto(token, postId, true, userId, nickname)

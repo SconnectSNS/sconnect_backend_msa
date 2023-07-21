@@ -4,19 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b2f727f-cc9e-45bf-bd0e-baaed3309eec" name="Changes" comment="[BE FEAT] like 기능 구현">
-      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/client/AuthServiceClient.kt" afterDir="false" />
+    <list default="true" id="7b2f727f-cc9e-45bf-bd0e-baaed3309eec" name="Changes" comment="[BE FEAT] 이미지 메타데이터 가져오는 api 작성">
+      <change afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/response/AccountResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/response/AccountResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce13db3f-3cba-4c38-8508-165006e5a451.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ce13db3f-3cba-4c38-8508-165006e5a451.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/AuthApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/AuthApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sns/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/SnsApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/SnsApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/LikeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/LikeController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Like.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Like.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/WebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/WebConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/controller/AuthController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/controller/AuthController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/model/entity/Account.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/model/entity/Account.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/service/AuthService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/service/AuthService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/service/TokenVerificationListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/service/TokenVerificationListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/client/AuthServiceClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/client/AuthServiceClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/PostController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/PostController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/dto/StorageResponseDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/dto/StorageResponseDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Image.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Image.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Post.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Post.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/repository/LikeRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/repository/LikeRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/request/CreatePostRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/request/CreatePostRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/response/PostResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/response/PostResponse.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/LikeService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/LikeService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/PostService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/PostService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/StorageService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/StorageService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +71,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -114,7 +124,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
+  <component name="RunManager" selected="Spring Boot.SnsApplication">
     <configuration name="Tests in 'api-gateway'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -194,7 +204,14 @@
     </configuration>
     <configuration name="SnsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="sns.main" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.sconnect.sns.SnsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -209,8 +226,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ApiGatewayApplication" />
         <item itemvalue="Spring Boot.ServiceRegistryApplication" />
+        <item itemvalue="Spring Boot.ApiGatewayApplication" />
         <item itemvalue="Gradle.Tests in 'api-gateway'" />
         <item itemvalue="Gradle.Tests in 'auth'" />
       </list>
@@ -237,7 +254,15 @@
       <workItem from="1689209553341" duration="2390000" />
       <workItem from="1689474696756" duration="54000" />
       <workItem from="1689554981385" duration="2805000" />
-      <workItem from="1689641624999" duration="12696000" />
+      <workItem from="1689641624999" duration="13985000" />
+      <workItem from="1689753222662" duration="7266000" />
+      <workItem from="1689764251498" duration="333000" />
+      <workItem from="1689764600656" duration="821000" />
+      <workItem from="1689765442780" duration="4565000" />
+      <workItem from="1689814307201" duration="1203000" />
+      <workItem from="1689832972915" duration="689000" />
+      <workItem from="1689843376523" duration="2701000" />
+      <workItem from="1689924770979" duration="4078000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -287,7 +312,31 @@
       <option name="project" value="LOCAL" />
       <updated>1689688495793</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="[BE FEAT] like 기능 구현">
+      <option name="closed" value="true" />
+      <created>1689751970080</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1689751970080</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[BE FIX] 오류 수정">
+      <option name="closed" value="true" />
+      <created>1689751992646</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1689751992646</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[BE FEAT] 이미지 메타데이터 가져오는 api 작성">
+      <option name="closed" value="true" />
+      <created>1689767894660</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1689767894660</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +358,9 @@
     <MESSAGE value="[BE FEAT] 게시글 하나, 여러개 불러오는 api 작성" />
     <MESSAGE value="[BE FEAT] 검색 api 구현" />
     <MESSAGE value="[BE FEAT] like 기능 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="[BE FEAT] like 기능 구현" />
+    <MESSAGE value="[BE FIX] 오류 수정" />
+    <MESSAGE value="[BE FEAT] 이미지 메타데이터 가져오는 api 작성" />
+    <option name="LAST_COMMIT_MESSAGE" value="[BE FEAT] 이미지 메타데이터 가져오는 api 작성" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

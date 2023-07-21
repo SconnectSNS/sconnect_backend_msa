@@ -19,7 +19,7 @@ class PostResponse(
         content = post.content,
         imageUrl = post.imageUrl,
         userId = post.userId,
-        imageData = post.imageData,
+        imageData = post.image.imageData,
         createdAt = post.createdAt,
         updatedAt = post.updatedAt
     )
