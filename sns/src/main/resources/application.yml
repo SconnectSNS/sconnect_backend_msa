@@ -2,9 +2,9 @@ spring:
   application:
     name: sns
   datasource:
-    url: jdbc:mysql://localhost:3306/sns_db
-    username: root
-    password: urnotyelping00
+    url: ${SPRING_SNS_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update

@@ -5,27 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b2f727f-cc9e-45bf-bd0e-baaed3309eec" name="Changes" comment="[BE FEAT] 이미지 메타데이터 가져오는 api 작성">
-      <change afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/response/AccountResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/response/AccountResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce13db3f-3cba-4c38-8508-165006e5a451.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ce13db3f-3cba-4c38-8508-165006e5a451.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-registry/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sns/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/WebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/WebConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/controller/AuthController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/controller/AuthController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/model/entity/Account.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/model/entity/Account.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/service/AuthService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/service/AuthService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/service/TokenVerificationListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/service/TokenVerificationListener.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/client/AuthServiceClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/client/AuthServiceClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/PostController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/PostController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/dto/StorageResponseDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/dto/StorageResponseDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Image.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Image.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Post.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Post.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/request/CreatePostRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/request/CreatePostRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/response/PostResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/response/PostResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/LikeService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/LikeService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/PostService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/PostService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/StorageService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/StorageService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sns/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,9 +46,34 @@
         <task path="$PROJECT_DIR$/api-gateway">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/auth">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/service-registry">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/sns">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sns" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sns" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sns" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -125,52 +137,75 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.SnsApplication">
-    <configuration name="Tests in 'api-gateway'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="C:/Users/Administrator/IdeaProjects/sconnect_backend_msa/service-registry [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/api-gateway" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/service-registry" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
+            <option value="bootJar" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'auth'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="auth [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/auth" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
+            <option value="bootJar" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="sns [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sns" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="api-gateway.main" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.sconnect.apigateway.ApiGatewayApplication" />
       <extension name="coverage">
         <pattern>
@@ -217,8 +252,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.Tests in 'api-gateway'" />
-      <item itemvalue="Gradle.Tests in 'auth'" />
+      <item itemvalue="Gradle.C:/Users/Administrator/IdeaProjects/sconnect_backend_msa/service-registry [bootJar]" />
+      <item itemvalue="Gradle.auth [bootJar]" />
+      <item itemvalue="Gradle.sns [bootJar]" />
       <item itemvalue="Spring Boot.SnsApplication" />
       <item itemvalue="Spring Boot.AuthApplication" />
       <item itemvalue="Spring Boot.ServiceRegistryApplication" />
@@ -226,10 +262,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ServiceRegistryApplication" />
         <item itemvalue="Spring Boot.ApiGatewayApplication" />
-        <item itemvalue="Gradle.Tests in 'api-gateway'" />
-        <item itemvalue="Gradle.Tests in 'auth'" />
+        <item itemvalue="Spring Boot.ServiceRegistryApplication" />
+        <item itemvalue="Gradle.sns [bootJar]" />
+        <item itemvalue="Gradle.auth [bootJar]" />
+        <item itemvalue="Gradle.C:/Users/Administrator/IdeaProjects/sconnect_backend_msa/service-registry [bootJar]" />
       </list>
     </recent_temporary>
   </component>
@@ -263,6 +300,8 @@
       <workItem from="1689832972915" duration="689000" />
       <workItem from="1689843376523" duration="2701000" />
       <workItem from="1689924770979" duration="4078000" />
+      <workItem from="1690159563940" duration="3050000" />
+      <workItem from="1690169932749" duration="6570000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
