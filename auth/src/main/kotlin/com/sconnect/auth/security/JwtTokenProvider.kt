@@ -83,6 +83,11 @@ open class JwtTokenProvider(
     }
 
     fun getUserEmailFromToken(token: String): String {
-        return getClaimsFromToken(token)!!["email"] as String
+        val resolvedToken = if( token.contains("Bearer")) {token.replace(
+        "Bearer ",
+        ""
+        )} else token
+        println("resolvedToken: $resolvedToken")
+        return getClaimsFromToken(resolvedToken)!!["email"] as String
     }
 }

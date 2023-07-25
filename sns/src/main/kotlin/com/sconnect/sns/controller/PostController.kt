@@ -1,5 +1,6 @@
 package com.sconnect.sns.controller
 
+import com.sconnect.sns.request.AccountRequest
 import com.sconnect.sns.request.CreatePostRequest
 import com.sconnect.sns.response.PostResponse
 import com.sconnect.sns.service.PostService
@@ -17,7 +18,8 @@ class PostController(
             @RequestHeader("Authorization") authorization: String,
             @RequestBody createPostRequest: CreatePostRequest
     ): ResponseEntity<Any> {
-        val response = PostResponse(postService.createPost(authorization, createPostRequest))
+        val user = postService.getUserInfoFromToken(AccountRequest(authorization))
+        val response = PostResponse(postService.createPost(authorization, createPostRequest), user)
         return ResponseEntity.ok().body(response)
     }
 
@@ -42,13 +44,16 @@ class PostController(
         return ResponseEntity.ok().body(post)
     }
 
+    /*
     //추천글 조회
     @GetMapping("posts/{postId}/recommend")
     fun getRecommendedPosts(
             @PathVariable postId: Long
-    ): ResponseEntity<List<PostResponse>>{
+    ): ResponseEntity<List<PostResponse>> {
         val posts = postService.getRecommendedPosts(postId)
         val postResponse: List<PostResponse> = posts.map { PostResponse(it) }
         return ResponseEntity.ok().body(postResponse)
     }
+
+     */
 }

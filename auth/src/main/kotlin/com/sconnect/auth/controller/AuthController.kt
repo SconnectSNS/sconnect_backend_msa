@@ -2,6 +2,7 @@ package com.sconnect.auth.controller
 
 import com.sconnect.auth.model.dto.SignInDto
 import com.sconnect.auth.model.dto.SignUpDto
+import com.sconnect.auth.request.AccountRequest
 import com.sconnect.auth.request.SignInRequest
 import com.sconnect.auth.request.SignUpRequest
 import com.sconnect.auth.response.AccountResponse
@@ -51,9 +52,19 @@ class AuthController(
     @PostMapping("/get-account-info")
     @ResponseStatus(HttpStatus.OK)
     fun getAccountInfo(
-        @RequestBody token: String
+        @RequestBody token: AccountRequest
     ): AccountResponse {
-        val accountInfo = authService.getAccountInfo(token)
+        val accountInfo = authService.getAccountInfo(token.jwt)
+        println("accountInfo: ${accountInfo.nickname}")
+        return AccountResponse(accountInfo)
+    }
+
+    @PostMapping("/get-account-info-id")
+    @ResponseStatus(HttpStatus.OK)
+    fun getAccountInfoId(
+        @RequestBody userId: Long
+    ): AccountResponse {
+        val accountInfo = authService.getAccountInfoId(userId)
         return AccountResponse(accountInfo)
     }
 

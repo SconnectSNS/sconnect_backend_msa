@@ -8,6 +8,7 @@ import com.sconnect.sns.model.entity.Image
 import com.sconnect.sns.model.entity.Post
 import com.sconnect.sns.repository.ImageRepository
 import com.sconnect.sns.repository.PostRepository
+import com.sconnect.sns.request.AccountRequest
 import com.sconnect.sns.request.CreatePostRequest
 import com.sconnect.sns.response.AccountResponse
 import com.sconnect.sns.response.PostResponse
@@ -27,7 +28,7 @@ class PostService(
 ) {
     fun createPost(authorization: String, createPostRequest: CreatePostRequest): Post {
         // "Authorization" 헤더에서 "Bearer"를 제거하고 토큰만 추출
-        val token = authorization.removePrefix("Bearer ").trim()
+        val token = AccountRequest(authorization.removePrefix("Bearer ").trim())
         //이미지 id 추출
         val image: Image =  imageRepository.findById(createPostRequest.imageId).orElseThrow()
         val accountResponse: AccountResponse = authServiceClient.getAccountInfo(token)
@@ -71,13 +72,18 @@ class PostService(
             postRepository.findAll(pageRequest)
         }
         val postResponses = mutableListOf<PostResponse>()
-        posts.forEach { postResponses.add(PostResponse(it)) }
+        posts.forEach {
+            val user = it.userId?.let { it1 -> getUserInfoFromId(it1) }
+            postResponses.add(PostResponse(it, user))
+        }
         return postResponses
     }
 
     fun getPost(postId: Long): PostResponse {
-        return PostResponse(postRepository.findById(postId)
-                .orElseThrow { throw IllegalArgumentException("Invalid post ID") })
+        val post = postRepository.findById(postId)
+        .orElseThrow { throw IllegalArgumentException("Invalid post ID") }
+        val user = post.userId?.let { getUserInfoFromId(it) }
+        return PostResponse(post,user)
     }
     fun getValidatedPost(postId: Long): Post {
         return postRepository.findById(postId)
@@ -109,9 +115,14 @@ class PostService(
         return postRepository.save(post)
     }
 
-    fun getUserInfoFromToken(authorization: String): AccountResponse {
+    fun getUserInfoFromToken(jwt: AccountRequest): AccountResponse {
         //Feign을 이용해 auth서버에 요청
-        return authServiceClient.getAccountInfo(authorization)
+        return authServiceClient.getAccountInfo(jwt)
+
+    }
+    fun getUserInfoFromId(userId: Long): AccountResponse {
+        //Feign을 이용해 auth서버에 요청
+        return authServiceClient.getAccountInfoId(userId)
 
     }
 }

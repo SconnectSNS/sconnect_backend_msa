@@ -45,7 +45,13 @@ class AuthService(
     }
 
     fun getAccountInfo(token: String): Account {
+        println("token: $token")
         val email = jwtTokenProvider.getUserEmailFromToken(token)
+        println("email: $email")
         return accountRepository.findByEmail(email)?: throw CantSignInException()
+    }
+
+    fun getAccountInfoId(accountId: Long): Account {
+        return accountRepository.findById(accountId).orElseThrow()
     }
 }
