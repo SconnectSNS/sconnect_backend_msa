@@ -2,13 +2,15 @@ package com.sconnect.sns.service
 
 import com.sconnect.sns.client.RecommendationServiceClient
 import com.sconnect.sns.repository.ImageRepository
+import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 
 @Component
 class RecommendationScheduledTask(
         private val imageRepository: ImageRepository,
-        private val recommendationServiceClient: RecommendationServiceClient
+        private val recommendationServiceClient: RecommendationServiceClient,
+        private val redisTemplate: RedisTemplate<String, Any>
 ) {
     @Scheduled(fixedRate = 60 * 60 * 1000) // 1시간마다
     fun recommendation() {
@@ -21,5 +23,9 @@ class RecommendationScheduledTask(
         }
         val result = recommendationServiceClient.getEmbeddings(mapOf("keywords" to map))
         println("result: $result")
+
+        result.forEach { (imageId, recommendationList) ->
+            redisTemplate.opsForValue().set(imageId, recommendationList)
+        }
     }
 }

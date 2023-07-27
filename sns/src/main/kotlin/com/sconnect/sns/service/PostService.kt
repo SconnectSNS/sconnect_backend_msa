@@ -16,6 +16,7 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort
+import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.stereotype.Service
 
@@ -24,7 +25,8 @@ class PostService(
         private val kafkaTemplate: KafkaTemplate<String, String>,
         private val postRepository: PostRepository,
         private val authServiceClient: AuthServiceClient,
-        private val imageRepository: ImageRepository
+        private val imageRepository: ImageRepository,
+        private val redisTemplate: RedisTemplate<String, Any>
 ) {
     fun createPost(authorization: String, createPostRequest: CreatePostRequest): Post {
         // "Authorization" 헤더에서 "Bearer"를 제거하고 토큰만 추출
@@ -62,7 +64,7 @@ class PostService(
     }
 
     //전체 검색 + 최신순 보여주기
-    fun getPosts(page: Int, size: Int, search: String?, sort: String? = "createdAt"): List<PostResponse> {
+    fun getPosts(page: Int, size: Int, search: String?, sort: String? = "createdAt"): Page<Post> {
         //DB에 저장된 Post 데이터를 최신순으로 가져옴.
         //사용자 인증이 필요없음. 진짜로 최신순 게시글을 불러오는 것이므로
         val pageRequest: Pageable = PageRequest.of(page - 1, size, Sort.Direction.DESC, sort)
@@ -71,12 +73,7 @@ class PostService(
         } else {
             postRepository.findAll(pageRequest)
         }
-        val postResponses = mutableListOf<PostResponse>()
-        posts.forEach {
-            val user = it.userId?.let { it1 -> getUserInfoFromId(it1) }
-            postResponses.add(PostResponse(it, user))
-        }
-        return postResponses
+        return posts
     }
 
     fun getPost(postId: Long): PostResponse {
@@ -90,9 +87,17 @@ class PostService(
                 .orElseThrow { throw IllegalArgumentException("Invalid post ID") }
     }
 
-    fun getRecommendedPosts(postId: Long): List<Post>{
-        //redis로부터 추천 게시글 id목록을 가져와서 게시글 List를 만들어 반환
-        return postRepository.findAllById(listOf(1L, 2L, 3L))
+    fun getRecommendedPosts(postId: Long): List<Post> {
+        // redis로부터 추천 게시글 id목록을 가져와서 게시글 List를 만들어 반환
+        val recommendedIds = redisTemplate.opsForValue().get(postId.toString()) as? List<Long> ?: listOf()
+
+        return if (recommendedIds.isNotEmpty()) {
+            val selectedIds = recommendedIds.shuffled().take(3)
+            postRepository.findAllById(selectedIds)
+        } else {
+            val latestPosts = getPosts(0, 100, null).content //추천 데이터가 없으면 랜덤하게 3개 반환
+            latestPosts.shuffled().take(3)
+        }
     }
 
 

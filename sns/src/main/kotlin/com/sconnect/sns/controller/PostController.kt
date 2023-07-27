@@ -32,7 +32,12 @@ class PostController(
             @RequestParam(required = false, defaultValue = "createdAt") sort: String?,
     ): ResponseEntity<List<PostResponse>> {
         val posts = postService.getPosts(page, size, search, sort)
-        return ResponseEntity.ok().body(posts)
+        val postResponses = mutableListOf<PostResponse>()
+        posts.forEach {
+            val user = it.userId?.let { it1 -> postService.getUserInfoFromId(it1) }
+            postResponses.add(PostResponse(it, user))
+        }
+        return ResponseEntity.ok().body(postResponses)
     }
 
     // 게시글 상세 조회
@@ -44,16 +49,19 @@ class PostController(
         return ResponseEntity.ok().body(post)
     }
 
-    /*
+
     //추천글 조회
     @GetMapping("posts/{postId}/recommend")
     fun getRecommendedPosts(
             @PathVariable postId: Long
     ): ResponseEntity<List<PostResponse>> {
         val posts = postService.getRecommendedPosts(postId)
-        val postResponse: List<PostResponse> = posts.map { PostResponse(it) }
+        val postResponse: List<PostResponse> = posts.map {
+            //각 게시물이 어떤 유저가 작성했는지 알아야함
+            val user = postService.getUserInfoFromId(it.userId!!)
+            PostResponse(it, user)
+        }
         return ResponseEntity.ok().body(postResponse)
     }
 
-     */
 }

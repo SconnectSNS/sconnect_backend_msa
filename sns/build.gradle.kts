@@ -55,6 +55,9 @@ dependencies {
 
 	// Google Cloud Vision
 	implementation("org.springframework.cloud:spring-cloud-gcp-starter-vision")
+
+	//redis
+	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 }
 
 dependencyManagement {
