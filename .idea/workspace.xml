@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b2f727f-cc9e-45bf-bd0e-baaed3309eec" name="Changes" comment="[BE FEAT] Get Posts API implement">
-      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/client/RecommendationServiceClient.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/config/WebConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/RecommendationScheduledTask.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce13db3f-3cba-4c38-8508-165006e5a451.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ce13db3f-3cba-4c38-8508-165006e5a451.xml" afterDir="false" />
+    <list default="true" id="7b2f727f-cc9e-45bf-bd0e-baaed3309eec" name="Changes" comment="[BE FEAT] 연관이미지 보여주는 api 구현">
+      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/config/RedisConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/repository/RedisRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/WebConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/WebConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/SnsApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/SnsApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Image.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Image.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/RedisConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/kotlin/com/sconnect/auth/configs/RedisConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/PostService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/PostService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/RecommendationScheduledTask.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/RecommendationScheduledTask.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,9 +81,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin File" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
-        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -306,7 +304,9 @@
       <workItem from="1690346481843" duration="6158000" />
       <workItem from="1690420975331" duration="595000" />
       <workItem from="1690421622251" duration="242000" />
-      <workItem from="1690421927295" duration="3704000" />
+      <workItem from="1690421927295" duration="7198000" />
+      <workItem from="1690439736760" duration="356000" />
+      <workItem from="1690440126327" duration="3636000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -396,7 +396,23 @@
       <option name="project" value="LOCAL" />
       <updated>1690250455227</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="[BE FEAT] 추천 요청 보내기 scheduled task 클래스 구현">
+      <option name="closed" value="true" />
+      <created>1690436179206</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1690436179206</updated>
+    </task>
+    <task id="LOCAL-00013" summary="[BE FEAT] 연관이미지 보여주는 api 구현">
+      <option name="closed" value="true" />
+      <created>1690437619386</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1690437619386</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +438,9 @@
     <MESSAGE value="[BE FEAT] 이미지 메타데이터 가져오는 api 작성" />
     <MESSAGE value="[BE FEAT] Dockerfile" />
     <MESSAGE value="[BE FEAT] Get Posts API implement" />
-    <option name="LAST_COMMIT_MESSAGE" value="[BE FEAT] Get Posts API implement" />
+    <MESSAGE value="[BE FEAT] 추천 요청 보내기 scheduled task 클래스 구현" />
+    <MESSAGE value="[BE FEAT] 연관이미지 보여주는 api 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="[BE FEAT] 연관이미지 보여주는 api 구현" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

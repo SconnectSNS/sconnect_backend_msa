@@ -27,8 +27,8 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
   redis:
-    host: ${SCONNECT_REDIS_HOST}   # Redis host
-    port: ${SCONNECT_REDIS_PORT}   # Redis port
+    host: ${SNS_REDIS_HOST}   # Redis host
+    port: ${SNS_REDIS_PORT}   # Redis port
 
 eureka:
   client:

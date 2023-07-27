@@ -1,13 +1,11 @@
 package com.sconnect.sns.service
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.sconnect.sns.client.AuthServiceClient
-import com.sconnect.sns.model.dto.RequestTokenDto
-import com.sconnect.sns.model.dto.ResponseTokenDto
 import com.sconnect.sns.model.entity.Image
 import com.sconnect.sns.model.entity.Post
 import com.sconnect.sns.repository.ImageRepository
 import com.sconnect.sns.repository.PostRepository
+import com.sconnect.sns.repository.RedisRepository
 import com.sconnect.sns.request.AccountRequest
 import com.sconnect.sns.request.CreatePostRequest
 import com.sconnect.sns.response.AccountResponse
@@ -16,7 +14,6 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort
-import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.stereotype.Service
 
@@ -26,7 +23,7 @@ class PostService(
         private val postRepository: PostRepository,
         private val authServiceClient: AuthServiceClient,
         private val imageRepository: ImageRepository,
-        private val redisTemplate: RedisTemplate<String, Any>
+        private val redisRepository: RedisRepository
 ) {
     fun createPost(authorization: String, createPostRequest: CreatePostRequest): Post {
         // "Authorization" 헤더에서 "Bearer"를 제거하고 토큰만 추출
@@ -89,13 +86,15 @@ class PostService(
 
     fun getRecommendedPosts(postId: Long): List<Post> {
         // redis로부터 추천 게시글 id목록을 가져와서 게시글 List를 만들어 반환
-        val recommendedIds = redisTemplate.opsForValue().get(postId.toString()) as? List<Long> ?: listOf()
-
+        val recommendedIds = redisRepository.getRecommendedIds(postId)?.map { it } ?: listOf()
+        println(recommendedIds.toString())
         return if (recommendedIds.isNotEmpty()) {
+            println("recommended result")
             val selectedIds = recommendedIds.shuffled().take(3)
             postRepository.findAllById(selectedIds)
         } else {
-            val latestPosts = getPosts(0, 100, null).content //추천 데이터가 없으면 랜덤하게 3개 반환
+            println("random result")
+            val latestPosts = getPosts(1, 100, null).content
             latestPosts.shuffled().take(3)
         }
     }

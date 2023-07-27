@@ -1,7 +1,5 @@
-package com.sconnect.auth.configs
+package com.sconnect.sns.config
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -9,8 +7,6 @@ import org.springframework.data.redis.connection.RedisConnectionFactory
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory
 import org.springframework.data.redis.core.RedisTemplate
-import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer
-import org.springframework.data.redis.serializer.StringRedisSerializer
 
 @Configuration
 class RedisConfig {
@@ -19,7 +15,6 @@ class RedisConfig {
 
     @Value("\${spring.redis.port}")
     private lateinit var redisPort: String
-
 
     @Bean
     fun redisConnectionFactory(): RedisConnectionFactory {
@@ -33,13 +28,9 @@ class RedisConfig {
 
     @Bean
     fun redisTemplate(connectionFactory: RedisConnectionFactory): RedisTemplate<Long, List<Long>> {
-        val objectMapper = ObjectMapper().registerModule(JavaTimeModule())
-        val serializer = Jackson2JsonRedisSerializer(List::class.java).apply { setObjectMapper(objectMapper) }
-
-        return RedisTemplate<Long, List<Long>>().apply {
-            setConnectionFactory(connectionFactory)
-            keySerializer = StringRedisSerializer()
-            valueSerializer = serializer
-        }
+        val redisTemplate = RedisTemplate<Long, List<Long>>()
+        redisTemplate.setConnectionFactory(connectionFactory)
+        return redisTemplate
     }
+
 }
