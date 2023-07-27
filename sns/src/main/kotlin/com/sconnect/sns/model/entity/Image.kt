@@ -7,6 +7,7 @@ import javax.persistence.OneToOne
 
 @Entity
 class Image(
+        //TODO: 어떤사람이 올린건지도 알 수 있도록 userId 저장 해야함
         @Id
         @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
         var imageId: Long = 0,

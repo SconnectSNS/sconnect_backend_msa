@@ -1,4 +1,4 @@
-package com.sconnect.auth.configs
+package com.sconnect.sns.config
 
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.servlet.config.annotation.CorsRegistry
@@ -8,9 +8,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 class WebConfig() : WebMvcConfigurer {
     override fun addCorsMappings(registry: CorsRegistry) {
         registry.addMapping("/**")
-            .allowedOrigins("http://localhost:3090","http://localhost:3000","http://localhost:9191","http://localhost:8082","http://host.docker.internal:8081")
-            .allowedMethods("*")
-            .allowedHeaders("*")
-            .allowCredentials(true)
+                .allowedOrigins("http://localhost:3090","http://localhost:3000","http://localhost:9191","http://localhost:8082")
+                .allowedMethods("*")
+                .allowedHeaders("*")
+                .allowCredentials(true)
     }
 }
