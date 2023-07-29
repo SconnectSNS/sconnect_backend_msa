@@ -5,12 +5,11 @@ import com.sconnect.sns.repository.ImageRepository
 import com.sconnect.sns.repository.RedisRepository
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
-import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 
 @Component
-class RecommendationScheduledTask(
+class PictureRecommendationScheduledTask(
         private val imageRepository: ImageRepository,
         private val recommendationServiceClient: RecommendationServiceClient,
         private val redisRepository: RedisRepository
