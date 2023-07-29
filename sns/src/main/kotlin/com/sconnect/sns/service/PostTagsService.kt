@@ -14,15 +14,22 @@ class PostTagsService(
 ) {
     //신규 생성 및 kafka 토픽으로 전송
     fun createPostTags(post: Post, tags: List<Tag>) {
-        tags.forEach {
+        tags.forEach { tag ->
             val postTags = PostTags(
                     post = post,
-                    tag = it
+                    tag = tag
             )
             postTagsRepository.save(postTags)
+
+            //kafka로 전송할 데이터 생성
+            val jsonString = """
+                {
+                    "userId": ${post.userId},
+                    "tagId": ${tag.tagId},
+                }
+            """.trimIndent()
+
+            kafkaTemplate.send("user-tag-usage", jsonString)
         }
-        //kafka 토픽으로 전송
-        val jsonString = "{\"postId\":${post.postId}}"
-        kafkaTemplate.send("post-tags", jsonString)
     }
 }
