@@ -25,7 +25,7 @@ class PostTagsService(
             val jsonString = """
                 {
                     "userId": ${post.userId},
-                    "tagId": ${tag.tagId},
+                    "tagName": ${tag.tagName},
                 }
             """.trimIndent()
 
