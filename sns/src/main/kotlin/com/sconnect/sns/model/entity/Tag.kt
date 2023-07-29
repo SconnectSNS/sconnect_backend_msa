@@ -8,7 +8,14 @@ class Tag(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         val tagId: Long = 0,
         @Column(nullable = false, unique = true)
-        val name: String = "",
+        val tagName: String = "",
         @OneToMany(mappedBy = "tag")
         val posts: List<Post> = listOf()
-)
+){
+        constructor(
+                name: String
+        ): this(
+                tagName = name,
+                posts = listOf()
+        )
+}

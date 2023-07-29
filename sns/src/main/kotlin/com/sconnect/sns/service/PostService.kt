@@ -14,16 +14,16 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort
-import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.stereotype.Service
 
 @Service
 class PostService(
-        private val kafkaTemplate: KafkaTemplate<String, String>,
         private val postRepository: PostRepository,
         private val authServiceClient: AuthServiceClient,
         private val imageRepository: ImageRepository,
-        private val redisRepository: RedisRepository
+        private val redisRepository: RedisRepository,
+        private val tagService: TagService,
+        private val postTagsService: PostTagsService
 ) {
     fun createPost(authorization: String, createPostRequest: CreatePostRequest): Post {
         // "Authorization" 헤더에서 "Bearer"를 제거하고 토큰만 추출
@@ -41,8 +41,11 @@ class PostService(
                 image = image,
                 userName = accountResponse.nickname
         )
+        // image.imageData에 있는 데이터들 하나하나 Tag 생성(없으면)
+        val tags = tagService.createTag(image.imageData)
 
-        //Feign을 이용해서 사용자 인증 서비스에 토큰 검증 요청
+        //PostTags 생성
+        postTagsService.createPostTags(post, tags)
 
         return postRepository.save(post) // 먼저 게시글을 저장하고, 게시물 ID를 가져옵니다.
 
