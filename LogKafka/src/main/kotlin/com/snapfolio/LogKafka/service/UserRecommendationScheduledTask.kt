@@ -13,7 +13,7 @@ class UserRecommendationScheduledTask(
         private val userRecommendationClient: UserRecommendationClient
 ): ApplicationRunner{
     override fun run(args: ApplicationArguments?) {
-
+        recommendation()
     }
 
     @Scheduled(fixedRate = 60 * 60 * 1000) // 1시간마다 실행

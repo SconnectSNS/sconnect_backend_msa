@@ -1,5 +1,5 @@
 package com.sconnect.sns.service
-
+/*
 import com.sconnect.sns.client.RecommendationServiceClient
 import com.sconnect.sns.repository.ImageRepository
 import com.sconnect.sns.repository.RedisRepository
@@ -36,3 +36,5 @@ class PictureRecommendationScheduledTask(
         )
     }
 }
+
+ */

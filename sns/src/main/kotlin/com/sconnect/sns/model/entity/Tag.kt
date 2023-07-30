@@ -10,12 +10,11 @@ class Tag(
         @Column(nullable = false, unique = true)
         val tagName: String = "",
         @OneToMany(mappedBy = "tag")
-        val posts: List<Post> = listOf()
-){
-        constructor(
-                name: String
-        ): this(
-                tagName = name,
-                posts = listOf()
-        )
+        val postTags: MutableList<PostTags> = mutableListOf()
+) {
+    constructor(
+            name: String
+    ) : this(
+            tagName = name
+    )
 }

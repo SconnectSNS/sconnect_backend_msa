@@ -21,4 +21,7 @@ class RedisRepository(
     fun getRecommendedIds(postId: Long): List<Long>? {
         return valueOperations.get(postId) as? List<Long>
     }
+    fun getRecommendUserIds(userId: Long): List<Long> {
+        return valueOperations.get(userId) as? List<Long> ?: emptyList()
+    }
 }

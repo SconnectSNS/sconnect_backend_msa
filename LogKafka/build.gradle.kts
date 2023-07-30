@@ -32,6 +32,10 @@ dependencies {
 	testImplementation("org.springframework.kafka:spring-kafka-test")
 	implementation("org.apache.kafka:kafka-clients")
 	implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
+	implementation("org.springframework.boot:spring-boot-starter-data-redis")
+	implementation("mysql:mysql-connector-java:8.0.28")
+
+
 }
 
 dependencyManagement {

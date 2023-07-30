@@ -12,9 +12,11 @@
       <schema-mapping>
         <introspection-scope>
           <node kind="schema">
-            <name qname="@" />
-            <name qname="user_db" />
             <name qname="sns_db" />
+            <name qname="@" />
+            <name qname="usertag" />
+            <name qname="user_db" />
+            <name qname="log_db" />
           </node>
         </introspection-scope>
       </schema-mapping>

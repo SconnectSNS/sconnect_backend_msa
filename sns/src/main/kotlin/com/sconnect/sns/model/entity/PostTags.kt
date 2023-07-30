@@ -1,10 +1,6 @@
 package com.sconnect.sns.model.entity
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.OneToOne
+import javax.persistence.*
 
 @Entity
 class PostTags(
@@ -12,9 +8,9 @@ class PostTags(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         val postTagId: Long = 0,
 
-        @OneToOne
-        val post: Post,
+        @ManyToOne(cascade = [CascadeType.ALL])
+        val post:Post,
 
-        @OneToOne
+        @ManyToOne
         val tag: Tag
 )

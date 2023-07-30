@@ -4,10 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b2f727f-cc9e-45bf-bd0e-baaed3309eec" name="Changes" comment="[BE FEAT] Tag 생성, PostTag 생성 로직 구현">
+    <list default="true" id="7b2f727f-cc9e-45bf-bd0e-baaed3309eec" name="Changes" comment="[BE FEAT] all feature done">
+      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/UserRecommendController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/UserRecommendService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce13db3f-3cba-4c38-8508-165006e5a451.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ce13db3f-3cba-4c38-8508-165006e5a451.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sns/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/PostTagsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/PostTagsService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogKafka/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/LogKafka/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogKafka/src/main/kotlin/com/snapfolio/LogKafka/LogKafkaApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/LogKafka/src/main/kotlin/com/snapfolio/LogKafka/LogKafkaApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogKafka/src/main/kotlin/com/snapfolio/LogKafka/service/UserRecommendationScheduledTask.kt" beforeDir="false" afterPath="$PROJECT_DIR$/LogKafka/src/main/kotlin/com/snapfolio/LogKafka/service/UserRecommendationScheduledTask.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogKafka/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/LogKafka/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/client/RecommendationServiceClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/client/RecommendationServiceClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/TagController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/controller/TagController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Post.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Post.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/PostTags.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/PostTags.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Tag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/Tag.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/model/entity/UserTagUsage.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/repository/PostTagsRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/repository/PostTagsRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/repository/RedisRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/repository/RedisRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/repository/TagRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/repository/TagRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/PictureRecommendationScheduledTask.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/PictureRecommendationScheduledTask.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/TagService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sns/src/main/kotlin/com/sconnect/sns/service/TagService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,36 +108,39 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2S5YeGCzMmnsHYyssPnvr8yKJGF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Administrator/IdeaProjects/sconnect_backend_msa/LogKafka/settings.gradle.kts",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "3a1b7a49b477e983b2eb3cadec6c868d",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/IdeaProjects/sconnect_backend_msa/LogKafka/settings.gradle.kts&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;1833912e3a63605ad42ba67e8a155586&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -222,6 +244,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LogKafkaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="LogKafka.main" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.snapfolio.LogKafka.LogKafkaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServiceRegistryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="service-registry.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.sconnect.serviceregistry.ServiceRegistryApplication" />
@@ -253,6 +283,7 @@
       <item itemvalue="Gradle.C:/Users/Administrator/IdeaProjects/sconnect_backend_msa/service-registry [bootJar]" />
       <item itemvalue="Gradle.auth [bootJar]" />
       <item itemvalue="Gradle.sns [bootJar]" />
+      <item itemvalue="Spring Boot.LogKafkaApplication" />
       <item itemvalue="Spring Boot.SnsApplication" />
       <item itemvalue="Spring Boot.AuthApplication" />
       <item itemvalue="Spring Boot.ServiceRegistryApplication" />
@@ -269,6 +300,13 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StandaloneScriptsStorage">
+    <option name="files">
+      <set>
+        <option value="$PROJECT_DIR$/LogKafka/build.gradle.kts" />
+      </set>
+    </option>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7b2f727f-cc9e-45bf-bd0e-baaed3309eec" name="Changes" comment="" />
@@ -305,7 +343,10 @@
       <workItem from="1690421622251" duration="242000" />
       <workItem from="1690421927295" duration="7198000" />
       <workItem from="1690439736760" duration="356000" />
-      <workItem from="1690440126327" duration="21221000" />
+      <workItem from="1690440126327" duration="25846000" />
+      <workItem from="1690646149951" duration="6446000" />
+      <workItem from="1690679917163" duration="2489000" />
+      <workItem from="1690683223000" duration="5326000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -435,7 +476,31 @@
       <option name="project" value="LOCAL" />
       <updated>1690629913506</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="[BE FEAT] user data Kafka Listener 구현">
+      <option name="closed" value="true" />
+      <created>1690633863555</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1690633863555</updated>
+    </task>
+    <task id="LOCAL-00018" summary="[BE FEAT] consumer app">
+      <option name="closed" value="true" />
+      <created>1690646286335</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1690646286335</updated>
+    </task>
+    <task id="LOCAL-00019" summary="[BE FEAT] tag api 구현">
+      <option name="closed" value="true" />
+      <created>1690648987446</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1690648987446</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +531,11 @@
     <MESSAGE value="[BE FEAT] 연관이미지 Redis 연결 구현" />
     <MESSAGE value="[BE FEAT] Tag 관련 entity 설계" />
     <MESSAGE value="[BE FEAT] Tag 생성, PostTag 생성 로직 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="[BE FEAT] Tag 생성, PostTag 생성 로직 구현" />
+    <MESSAGE value="[BE FEAT] user data Kafka Listener 구현" />
+    <MESSAGE value="[BE FEAT] consumer app" />
+    <MESSAGE value="[BE FEAT] tag api 구현" />
+    <MESSAGE value="[BE FEAT] all feature done" />
+    <option name="LAST_COMMIT_MESSAGE" value="[BE FEAT] all feature done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

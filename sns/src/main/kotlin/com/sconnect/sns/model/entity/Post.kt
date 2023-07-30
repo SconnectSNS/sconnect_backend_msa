@@ -20,7 +20,8 @@ class Post(
         var likeCount: Int = 0,
         @OneToMany(mappedBy = "post")
         var likes: MutableList<Like> = mutableListOf(),
-
+        @OneToMany(mappedBy = "post", cascade = [CascadeType.PERSIST, CascadeType.MERGE])
+        var postTags: MutableList<PostTags> = mutableListOf(),
         //Created At, Updated At 추가
         var createdAt: LocalDateTime = LocalDateTime.now(),
         var updatedAt: LocalDateTime = LocalDateTime.now()
